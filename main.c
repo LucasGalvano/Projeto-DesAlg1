@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "funcoes.h"
+#include "trade.h"
+#include "cadastro.h"
 
 int main() {
     char usuario[USUARIO];

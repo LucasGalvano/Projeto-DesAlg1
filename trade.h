@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "cadastro.h"
 
 #define taxa_bit_compra 0.02
 #define taxa_bit_venda 0.03

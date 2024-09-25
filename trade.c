@@ -1,29 +1,8 @@
 #include "trade.h"
+#include "cadastro.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-void clearBuffer() {
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF);
-}
-
-//funcao para validar a senha qnd preciasar
-int validar_senha(char *senha_cadastrada) {
-    char input_senha[SENHA];
-
-    printf("Digite sua senha: ");
-    fgets(input_senha, SENHA, stdin);
-    input_senha[strcspn(input_senha, "\n")] = '\0';
-
-    if (strcmp(input_senha, senha_cadastrada) == 0) {
-        return 1;
-    }
-    else {
-        printf("Senha incorreta!\n");
-        return 0;
-    }
-}
 
 // Funcao para consultar o saldo
 void carteira(float *saldo_reais, Criptomoeda *criptos, int menu_cripto) {
