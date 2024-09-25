@@ -28,7 +28,7 @@ int validar_senha(char *senha_cadastrada) {
 void cadastro(char *usuario, char *cpf, char *senha) {
     printf("--- Cadastre-se ---\n\n");
 
-    // Nome de usuario
+    // Nome de usuário
     printf("Digite seu nome de usuario: ");
     fgets(usuario, USUARIO, stdin);
     usuario[strcspn(usuario, "\n")] = '\0';
@@ -37,19 +37,21 @@ void cadastro(char *usuario, char *cpf, char *senha) {
     printf("Digite seu CPF (somente numeros): ");
     fgets(cpf, CPF, stdin);
     cpf[strcspn(cpf, "\n")] = '\0';
+    clearBuffer();
 
-    //Novo teste de CPF de 11 caracteres
-    while (strlen(cpf) != 11) {
-        printf("Digite um CPF valido (11 digitos): ");
+    if (strlen(cpf) >= CPF || strlen(cpf) <= CPF) {
+        printf("Digite um CPF valido.\n");
+        printf("Digite seu CPF novamente: \n");
         fgets(cpf, CPF, stdin);
         cpf[strcspn(cpf, "\n")] = '\0';
+        clearBuffer();
     }
 
     // Senha
     printf("Digite sua senha (maximo de %d caracteres): ", SENHA - 1);
     fgets(senha, SENHA, stdin);
     senha[strcspn(senha, "\n")] = '\0';
-
+    clearBuffer();
     printf("Conta criada com sucesso!\n");
 }
 
@@ -57,9 +59,9 @@ void login(char *usuario, char *senha) {
     char input_usuario[USUARIO];
     char input_senha[SENHA];
 
-    printf("--- Realize seu login --- \n\n");
+    printf("--- Faca seu login --- \n\n");
 
-    // Nome de usuario
+    // Nome de usuário
     printf("Usuario: ");
     fgets(input_usuario, USUARIO, stdin);
     input_usuario[strcspn(input_usuario, "\n")] = '\0';
@@ -72,9 +74,8 @@ void login(char *usuario, char *senha) {
     // Valida login
     if (strcmp(input_usuario, usuario) == 0 && strcmp(input_senha, senha) == 0) {
         printf("Login realizado com sucesso!\n");
-    } 
+    }
     else {
         printf("Usuario ou senha incorretos!\n");
     }
 }
-
