@@ -24,32 +24,6 @@ int validar_senha(char *senha_cadastrada) {
         return 0;
     }
 }
-#include "cadastro.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-void clearBuffer() {
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF);
-}
-
-//funcao para validar a senha qnd precisar
-int validar_senha(char *senha_cadastrada) {
-    char input_senha[SENHA];
-
-    printf("Digite sua senha: ");
-    fgets(input_senha, SENHA, stdin);
-    input_senha[strcspn(input_senha, "\n")] = '\0';
-
-    if (strcmp(input_senha, senha_cadastrada) == 0) {
-        return 1;
-    }
-    else {
-        printf("Senha incorreta!\n");
-        return 0;
-    }
-}
 
 void cadastro(char *usuario, char *cpf, char *senha) {
     printf("--- Cadastre-se ---\n\n");
