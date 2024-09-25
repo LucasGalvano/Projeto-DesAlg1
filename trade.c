@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 // Funcao para consultar o saldo
 void carteira(float *saldo_reais, Criptomoeda *criptos, int menu_cripto) {
     printf("Saldo em R$: %.2f\n", *saldo_reais);
