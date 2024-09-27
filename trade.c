@@ -1,5 +1,5 @@
 #include "trade.h"
-#include "cadastro.h"
+//#include "cadastro.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
