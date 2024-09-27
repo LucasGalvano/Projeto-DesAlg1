@@ -7,7 +7,7 @@
 // Funcao para consultar o saldo
 void carteira(float *saldo_reais, Criptomoeda *criptos, int menu_cripto){
     printf("Saldo em R$: %.2f\n", *saldo_reais);
-    printf("Quantidade de Criptomoedas:\n");
+    printf("Quantidade de Criptomoedas: \n");
     int i;
     for (i = 0; i < menu_cripto; i++) {
         printf("%d. %s - Quantidade: %.2f\n", i + 1, criptos[i].nome, criptos[i].quantidade);
@@ -183,8 +183,7 @@ void atualizar_cotacao(Criptomoeda *criptos, int menu_cripto) {
 
 // Funcao para salvar uma nova transacao
 int totalTransacoes = 0; // define o numero inicial de transações
-void salvarTransacao(Usuario usuario, Transacao nova_transacao) {
-    nova_transacao.idUsuario = usuario.id;  
+void salvarTransacao(Usuario usuario, Transacao nova_transacao) { 
     int i;
     if (totalTransacoes < MAX_TRANSACOES) {
         historicoTransacoes[totalTransacoes++] = nova_transacao;
@@ -215,10 +214,8 @@ void consultarExtrato(Usuario usuario) {
 
         int i;
         for (i = 0; i < totalTransacoes; i++) {
-            if (historicoTransacoes[i].idUsuario == usuario.id) {
                 fprintf(arquivo, "%s\t%s\t%.2f\t\t%.2f\t%s\n",historicoTransacoes[i].data,historicoTransacoes[i].tipoOperacao,
                 historicoTransacoes[i].valor,historicoTransacoes[i].taxa,historicoTransacoes[i].criptomoeda);
-            }
         }
     }
 
