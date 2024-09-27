@@ -5,8 +5,7 @@
 #include <string.h>
 
 // Funcao para consultar o saldo
-void carteira(float *saldo_reais, Criptomoeda *criptos, int menu_cripto, Usuario usuario){
-    printf("Ola, %s! Bem vindo a sua carteira!\n", usuario.nome); // teste para ver se funciona corretamente
+void carteira(float *saldo_reais, Criptomoeda *criptos, int menu_cripto){
     printf("Saldo em R$: %.2f\n", *saldo_reais);
     printf("Quantidade de Criptomoedas:\n");
     int i;
@@ -200,7 +199,7 @@ void salvarTransacao(Usuario usuario, Transacao nova_transacao) {
 
 // Funcao para consultar e salvar o extrato em um arquivo de texto
 void consultarExtrato(Usuario usuario) {
-    FILE *arquivo = fopen("extrato.txt", "w"); // Abre o arquivo para escrita
+    FILE *arquivo = fopen("extrato.txt", "w");
 
     if (arquivo == NULL) {
         printf("Erro ao criar o arquivo de extrato.\n");

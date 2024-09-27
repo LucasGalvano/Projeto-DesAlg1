@@ -41,7 +41,7 @@ typedef struct {
     char nome[50];
 } Usuario;
 
-void carteira(float *, Criptomoeda *, int, Usuario);
+void carteira(float *, Criptomoeda *, int);
 void depositar_reais(float *);
 void sacar_reais(float *, char *);
 void comprar_cripto(float *, Criptomoeda *, int, char *);
