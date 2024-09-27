@@ -5,7 +5,7 @@
 #include <string.h>
 
 // Funcao para consultar o saldo
-void carteira(float *saldo_reais, Criptomoeda *criptos, int menu_cripto) {
+void carteira(float *saldo_reais, Criptomoeda *criptos, int menu_cripto){
     printf("Saldo em R$: %.2f\n", *saldo_reais);
     printf("Quantidade de Criptomoedas:\n");
     int i;
@@ -179,4 +179,49 @@ void atualizar_cotacao(Criptomoeda *criptos, int menu_cripto) {
         criptos[i].cotacao *= (1 + variacao);
         printf("Nova cotacao: %s: %.2f R$\n", criptos[i].nome, criptos[i].cotacao);
     }
+}
+
+// Funcao para salvar uma nova transacao
+int totalTransacoes = 0; // define o numero inicial de transações
+void salvarTransacao(Usuario usuario, Transacao nova_transacao) {
+    nova_transacao.idUsuario = usuario.id;  
+    int i;
+    if (totalTransacoes < MAX_TRANSACOES) {
+        historicoTransacoes[totalTransacoes++] = nova_transacao;
+    }
+    else {
+        for (i = 1; i < MAX_TRANSACOES; i++) {
+            historicoTransacoes[i - 1] = historicoTransacoes[i];
+        }
+        historicoTransacoes[MAX_TRANSACOES - 1] = nova_transacao;
+    }
+}
+
+// Funcao para consultar e salvar o extrato em um arquivo de texto
+void consultarExtrato(Usuario usuario) {
+    FILE *arquivo = fopen("extrato.txt", "w");
+
+    if (arquivo == NULL) {
+        printf("Erro ao criar o arquivo de extrato.\n");
+        return;
+    }
+
+    if (totalTransacoes == 0) {
+        fprintf(arquivo, "Nenhuma transacao realizada para o usuario %s (ID: %d).\n", usuario.nome, usuario.id);
+    }
+    else {
+        fprintf(arquivo, "Extrato de transacoes para o usuario %s (ID: %d):\n", usuario.nome, usuario.id);
+        fprintf(arquivo, "Data\t\tTipo\t\tValor\t\tTaxa\tCriptomoeda\n");
+
+        int i;
+        for (i = 0; i < totalTransacoes; i++) {
+            if (historicoTransacoes[i].idUsuario == usuario.id) {
+                fprintf(arquivo, "%s\t%s\t%.2f\t\t%.2f\t%s\n",historicoTransacoes[i].data,historicoTransacoes[i].tipoOperacao,
+                historicoTransacoes[i].valor,historicoTransacoes[i].taxa,historicoTransacoes[i].criptomoeda);
+            }
+        }
+    }
+
+    fclose(arquivo);
+    printf("Extrato salvo no arquivo 'extrato.txt' para o usuario %s.\n", usuario.nome);
 }

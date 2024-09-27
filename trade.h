@@ -15,23 +15,39 @@
 #define SENHA 7
 #define USUARIO 30
 #define CPF 12
+#define MAX_TRANSACOES 100
 
+// struct de extrato
+typedef struct{
+    char data[11];
+    char tipoOperacao[10];
+    float valor;
+    float taxa;
+    char criptomoeda[10];
+    int idUsuario;
+} Transacao;
+
+Transacao historicoTransacoes[MAX_TRANSACOES];
+
+// struct com dados de criptomoeda
 typedef struct {
     char nome[50];
     float cotacao;
     float quantidade;
 } Criptomoeda;
 
+//struct com dados do usuario
+typedef struct {
+    int id;
+    char nome[50];
+} Usuario;
 
-void clearBuffer();
-void trade(char *, char *, char *);
-void login(char *, char *);
-int validar_senha(char *);
 void carteira(float *, Criptomoeda *, int);
 void depositar_reais(float *);
 void sacar_reais(float *, char *);
 void comprar_cripto(float *, Criptomoeda *, int, char *);
 void vender_cripto(float *, Criptomoeda *, int, char *);
 void atualizar_cotacao(Criptomoeda *, int);
-
+void salvarTransacao(Usuario, Transacao);
+void consultarExtrato(Usuario);
 #endif
