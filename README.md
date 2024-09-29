@@ -1,3 +1,3 @@
-##Página Trade
+Página Trade
 
 Na página trade está o "músculo" do projeto, com toda a funcionalidade principal do programa. A função carteira permite consultar o saldo do usuário em Ripple, Bitcoin, Ethereum e reais. A função depositar reais adiciona dinheiro à carteira, enquanto a função saque realiza o saque de reais. As funções taxa compra e taxa venda calculam as taxas para comprar e vender criptomoedas, respectivamente. A função comprar cripto adiciona criptomoedas à carteira e diminui o saldo em reais, enquanto vender cripto diminui a quantidade de criptos e aumenta os reais. A função atualizar cotações gera variações aleatórias de -5% a 5% no valor das criptomoedas, simulando valorizações ou desvalorizações no mercado.
