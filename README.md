@@ -1,3 +1,5 @@
+Banco exchange
+
 Objetivo do Projeto
 Este projeto consiste na criação de uma Exchange de Criptomoedas, uma plataforma onde os usuários podem comprar e vender três tipos de criptomoedas: Bitcoin, Ethereum e Ripple. A aplicação permite a realização de operações como consulta de saldo, depósito de reais, compra e venda de criptomoedas, além de manter um histórico de transações e manipular os dados dos usuários de maneira segura através de arquivos binários.
 
