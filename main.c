@@ -5,10 +5,12 @@
 #include "trade.h"
 #include "cadastro.h"
 
-int main() {
+int main()
+{
     char usuario[USUARIO];
     char senha[SENHA];
     char cpf[CPF];
+    // Usuario usuario;
 
     // Criar a conta com validação de usuário, CPF e senha
     cadastro(usuario, cpf, senha);
@@ -19,7 +21,8 @@ int main() {
 
     float saldo_reais = 0;
     Criptomoeda *criptos = malloc(3 * sizeof(Criptomoeda));
-    if (criptos == NULL) {
+    if (criptos == NULL)
+    {
         printf("Erro ao alocar memoria.\n");
         return 1;
     }
@@ -38,7 +41,8 @@ int main() {
     int opcao, continuar = 1;
     srand(time(NULL));
 
-    while (continuar) {
+    while (continuar)
+    {
         printf("\n--- Menu Exchange ---\n");
         printf("1. Deposito\n");
         printf("2. Saque\n");
@@ -50,41 +54,43 @@ int main() {
         printf("8. Sair\n");
         printf("Escolha uma opcao: ");
 
-        if (scanf("%d", &opcao) != 1) {
+        if (scanf("%d", &opcao) != 1)
+        {
             printf("Erro ao ler a opcao.\n");
             clearBuffer();
             continue;
         }
-        clearBuffer();  
+        clearBuffer();
 
-        switch (opcao) {
-            case 1:
-                depositar_reais(&saldo_reais);
-                break;
-            case 2:
-                sacar_reais(&saldo_reais, senha);  
-                break;
-            case 3:
-                carteira(&saldo_reais, criptos, 3);
-                break;
-            case 4:
-                comprar_cripto(&saldo_reais, criptos, 3, senha);  
-                break;
-            case 5:
-                vender_cripto(&saldo_reais, criptos, 3, senha);  
-                break;
-            case 6:
-                atualizar_cotacao(criptos, 3);
-                break;
-            case 7:
-                printf("desenvolvedores animais nao fizeram ainda :)");
-                break;
-            case 8:
-                continuar = 0;
-                break;
-            default:
-                printf("Opcao invalida!\n");
-                break;
+        switch (opcao)
+        {
+        case 1:
+            depositar_reais(&saldo_reais);
+            break;
+        case 2:
+            sacar_reais(&saldo_reais, senha);
+            break;
+        case 3:
+            carteira(&saldo_reais, criptos, 3);
+            break;
+        case 4:
+            comprar_cripto(&saldo_reais, criptos, 3, senha);
+            break;
+        case 5:
+            vender_cripto(&saldo_reais, criptos, 3, senha);
+            break;
+        case 6:
+            atualizar_cotacao(criptos, 3);
+            break;
+        case 7:
+            // consultarExtrato(Usuario usuario);
+            break;
+        case 8:
+            continuar = 0;
+            break;
+        default:
+            printf("Opcao invalida!\n");
+            break;
         }
     }
 
