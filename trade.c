@@ -115,7 +115,7 @@ void comprar_cripto(float *saldo_reais, Criptomoeda *criptos, int menu_cripto, c
         clearBuffer();
         return;
     }
-    clearBuffer(); // Limpa o buffer de entrada após scanf
+    clearBuffer(); 
     escolha--;
 
     if (escolha < 0 || escolha >= menu_cripto)
@@ -247,7 +247,7 @@ void consultarExtrato(Usuario usuario)
         return;
     }
 
-    int encontrouTransacao = 0; // Variável para verificar se encontrou transações
+    int encontrouTransacao = 0; 
     fprintf(arquivo, "Extrato de transacoes para o usuario %s (ID: %d):\n", usuario.nome, usuario.id);
     fprintf(arquivo, "Data\t\tTipo\t\tValor\t\tTaxa\tCriptomoeda\n");
 
@@ -255,7 +255,7 @@ void consultarExtrato(Usuario usuario)
     {
         if (historicoTransacoes[i].idUsuario == usuario.id)
         {
-            encontrouTransacao = 1; // Marque que encontrou transações
+            encontrouTransacao = 1; 
             fprintf(arquivo, "%s\t%s\t%.2f\t\t%.2f\t%s\n",
                     historicoTransacoes[i].data,
                     historicoTransacoes[i].tipoOperacao,
