@@ -83,7 +83,7 @@ int main()
             atualizar_cotacao(criptos, 3);
             break;
         case 7:
-            consultarExtrato(usuario); // Passar o objeto Usuario
+            consultarExtrato(usuario);
             break;
         case 8:
             continuar = 0;
