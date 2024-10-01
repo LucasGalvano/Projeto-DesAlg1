@@ -7,17 +7,17 @@
 
 int main()
 {
-    char usuario[USUARIO];
+    Usuario usuario; // Criar um objeto do tipo Usuario
     char senha[SENHA];
     char cpf[CPF];
-    // Usuario usuario;
 
     // Criar a conta com validação de usuário, CPF e senha
-    cadastro(usuario, cpf, senha);
+    cadastro(usuario.nome, cpf, senha);
+    usuario.id = 1; // Definir um ID para o usuário
 
     // Solicitar login
     printf("\nFaca login para acessar o sistema.\n");
-    login(usuario, senha);
+    login(usuario.nome, senha);
 
     float saldo_reais = 0;
     Criptomoeda *criptos = malloc(3 * sizeof(Criptomoeda));
@@ -83,7 +83,7 @@ int main()
             atualizar_cotacao(criptos, 3);
             break;
         case 7:
-            // consultarExtrato(Usuario usuario);
+            consultarExtrato(usuario); // Passar o objeto Usuario
             break;
         case 8:
             continuar = 0;

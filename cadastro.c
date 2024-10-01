@@ -32,7 +32,7 @@ int validar_senha(char *senha_cadastrada)
 
 void cadastro(char *usuario, char *cpf, char *senha)
 {
-    printf("--- Cadastre-se ---\n\n");
+    printf("--- Cadastre-se ---\n");
 
     // Nome de usuário
     printf("Digite seu nome de usuario: ");
