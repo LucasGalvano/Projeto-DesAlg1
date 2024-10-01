@@ -25,9 +25,8 @@ typedef struct{
     float taxa;
     char criptomoeda[10];
     int idUsuario;
+    //int historicoTransacoes[MAX_TRANSACOES];
 } Transacao;
-
-Transacao historicoTransacoes[MAX_TRANSACOES];
 
 // struct com dados de criptomoeda
 typedef struct {

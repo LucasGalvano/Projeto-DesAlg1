@@ -83,7 +83,8 @@ int main()
             atualizar_cotacao(criptos, 3);
             break;
         case 7:
-            consultarExtrato(usuario);
+            //consultarExtrato(usuario);
+            printf("amoeba");
             break;
         case 8:
             continuar = 0;

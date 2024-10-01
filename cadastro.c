@@ -40,24 +40,25 @@ void cadastro(char *usuario, char *cpf, char *senha)
     usuario[strcspn(usuario, "\n")] = '\0';
 
     // CPF
-    do
-    {
+    do{
         printf("Digite seu CPF (11 digitos, somente numeros): ");
         fgets(cpf, CPF, stdin);
         cpf[strcspn(cpf, "\n")] = '\0';
-        clearBuffer();
-        if (strlen(cpf) != 11)
-        {
+        if (strlen(cpf) != 11){
             printf("CPF invalido. Deve conter 11 digitos.\n");
         }
     } while (strlen(cpf) != 11);
-
+    clearBuffer();
     // Senha
-    printf("Digite sua senha (maximo de %d caracteres): ", SENHA - 1);
-    fgets(senha, SENHA, stdin);
-    senha[strcspn(senha, "\n")] = '\0';
-
-    printf("Conta criada com sucesso!\n");
+    do{
+        printf("Digite sua senha (maximo de %d caracteres): ", SENHA - 1);
+        fgets(senha, SENHA, stdin);
+        senha[strcspn(senha, "\n")] = '\0';
+        if (strlen(senha) < 6){
+            printf("Senha muito curta. Deve ter pelo menos 6 caracteres.\n");
+        }
+    } while (strlen(senha) != 6);
+    clearBuffer();
 }
 
 void login(char *usuario, char *senha)
@@ -66,7 +67,7 @@ void login(char *usuario, char *senha)
     char input_senha[SENHA];
 
     printf("--- Faca seu login --- \n");
-    clearBuffer();
+    
     // Nome de usuário
     printf("Usuario: ");
     fgets(input_usuario, USUARIO, stdin);
@@ -82,8 +83,7 @@ void login(char *usuario, char *senha)
     {
         printf("Login realizado com sucesso!\n");
     }
-    else
-    {
+    else{
         printf("Usuario ou senha incorretos!\n");
     }
 }
