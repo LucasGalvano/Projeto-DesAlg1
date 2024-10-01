@@ -1,3 +1,1 @@
-Extrato de transacoes para o usuario ds (ID: 1):
-Data		Tipo		Valor		Taxa	Criptomoeda
-Nenhuma transacao realizada para o usuario ds (ID: 1).
+
