@@ -1,5 +1,10 @@
 Banco exchange
 
+Responsáveis pelo projeto:
+Gustavo Matias Félix, RA: 22.124.007-0.
+Lucas Galvano de Paula, RA: 22.124.015-3.
+
+
 Objetivo do Projeto
 Este projeto consiste na criação de uma Exchange de Criptomoedas, uma plataforma onde os usuários podem comprar e vender três tipos de criptomoedas: Bitcoin, Ethereum e Ripple. A aplicação permite a realização de operações como consulta de saldo, depósito de reais, compra e venda de criptomoedas, além de manter um histórico de transações e manipular os dados dos usuários de maneira segura através de arquivos binários.
 
