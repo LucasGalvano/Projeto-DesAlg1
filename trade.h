@@ -18,25 +18,28 @@
 #define MAX_TRANSACOES 100
 
 // struct de extrato
-typedef struct{
+typedef struct
+{
     char data[11];
     char tipoOperacao[10];
     float valor;
     float taxa;
     char criptomoeda[10];
     int idUsuario;
-    //int historicoTransacoes[MAX_TRANSACOES];
+    // int historicoTransacoes[MAX_TRANSACOES];
 } Transacao;
 
 // struct com dados de criptomoeda
-typedef struct {
+typedef struct
+{
     char nome[50];
     float cotacao;
     float quantidade;
 } Criptomoeda;
 
-//struct com dados do usuario
-typedef struct {
+// struct com dados do usuario
+typedef struct
+{
     int id;
     char nome[50];
 } Usuario;
@@ -48,5 +51,5 @@ void comprar_cripto(float *, Criptomoeda *, int, char *);
 void vender_cripto(float *, Criptomoeda *, int, char *);
 void atualizar_cotacao(Criptomoeda *, int);
 void salvarTransacao(Usuario, Transacao);
-void consultarExtrato(Usuario);
+void consultarExtrato();
 #endif
