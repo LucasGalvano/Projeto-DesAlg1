@@ -1,3 +1,0 @@
-
-01-10-2024 21:51:33 - Operacao: Deposito | Valor: 124.00 | Detalhes: Deposito em Reais
-01-10-2024 21:51:50 - Operacao: Saque | Valor: 112.00 | Detalhes: Saque em Reais
