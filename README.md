@@ -7,6 +7,7 @@ Lucas Galvano de Paula, RA: 22.124.015-3.
 
 Objetivo do Projeto
 Este projeto consiste na criação de uma Exchange de Criptomoedas, uma plataforma onde os usuários podem comprar e vender três tipos de criptomoedas: Bitcoin, Ethereum e Ripple. A aplicação permite a realização de operações como consulta de saldo, depósito de reais, compra e venda de criptomoedas, além de manter um histórico de transações e manipular os dados dos usuários de maneira segura através de arquivos binários.
+Obs: Caso o arquivo não esteja rodando no terminal, exibindo o erro "cc1.exe: fatal error: 'nome do arquivo': No such file or directory compilation terminated", use o comando cd **Projeto-DesAlg1** para redirecionar o diretório à pasta correta.
 
 Criptomoedas Suportadas
 Bitcoin:
